@@ -38,7 +38,8 @@ The DVD Rental database is normalized for transactional operations, making it le
 
 3. **Verify results**
    - After inserting or updating rental activity, check the customer_summary table to view updated movie recommendations.
-   - You can also manually call the `refresh_summary()` procedure if needed.
+   - To trigger the summary logic, insert new rows into `detailed_table`.
+   - Alternatively, run `CALL clear_reload_tables();` to repopulate the summary based on the full dataset.
 
 4. **Explore and adapt**
    - Extend the logic to other summary metrics.
